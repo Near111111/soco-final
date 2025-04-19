@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Play Video on Click</title>
+    <style>
+      #bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 500px;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        display: none;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        z-index: 0;
+      }
+
+      .click-me-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 12px 24px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 1;
+      }
+
+      .click-me-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Video -->
+    <video id="bg-video" autoplay playsinline preload="auto">
+      <source src="soco.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Click Me Button -->
+    <button class="click-me-btn" onclick="playVideo()">Click Me</button>
+
+    <script>
+      function playVideo() {
+        const video = document.getElementById("bg-video");
+        video.style.display = "block";
+        video.play();
+      }
+    </script>
+  </body>
+</html>
